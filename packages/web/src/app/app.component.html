@@ -1,11 +1,11 @@
 <div class="app">
   <div class="app__input">
     <div class="app__input-container">
-      <input type="number" [(ngModel)]="inputValue">
-      <button type="submit" (click)="enterValue()" [disabled]="!inputValue">Submit</button>
+      <input type="number" class="app__input--field" [(ngModel)]="inputValue">
+      <button type="submit" (click)="onSubmitValue()" [disabled]="!inputValue">Submit</button>
     </div>
 
-    <div class="app__current-value" *ngIf="currentData && !loadingCurrentValue$.value; else loading">
+    <div class="app__current-value" *ngIf="currentData && !loadingCurrentInputValue$.value; else loading">
       <div>Value: {{ currentData.value }}</div>
       <div>Time: {{ currentData.time }}</div>
     </div>
@@ -13,9 +13,9 @@
     <button class="app__history" type="button" (click)="getHistory()">History</button>
   </div>
 
-  <ng-container *ngIf="history.length || !loadingHistory$.value; else loading">
-    <div class="app__history-records-wrapper" *ngIf="history.length">
-      <div class="app__history-records" *ngFor="let record of history">
+  <ng-container *ngIf="historyValueList.length || !loadingHistoryList$.value; else loading">
+    <div class="app__history-records-wrapper" *ngIf="historyValueList.length">
+      <div class="app__history-records" *ngFor="let record of historyValueList">
         <div>{{ record.value }}</div>
         <div>{{ record.time }}</div>
       </div>

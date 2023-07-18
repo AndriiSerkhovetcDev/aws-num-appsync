@@ -1,5 +1,5 @@
 import TValue from './graphql/value.type';
-import { handler as enterValue } from './enterValue';
+import { handler as saveValue } from './saveValue';
 
 type AppSyncEvent = {
   info: {
@@ -13,7 +13,8 @@ type AppSyncEvent = {
 export async function handler(event: AppSyncEvent) {
   switch (event.info.fieldName) {
     case 'enterValue':
-      return await enterValue(event.arguments.value);
+      // @ts-ignore
+      return await saveValue(event.arguments.value);
     default:
       return null;
   }

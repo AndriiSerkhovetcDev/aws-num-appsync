@@ -107,14 +107,4 @@ export class APIService {
       }`,
     ),
   ) as Observable<SubscriptionResponse<Pick<__SubscriptionContainer, "onEnteredValue">>>;
-
-  public getHistory(): RxJsObservable<any> {
-    return this.http.get(this._baseUrl + '/history')
-    .pipe(take(1));
-  }
-
-  public getLastValue(): RxJsObservable<any> {
-    return this.http.get(this._baseUrl + '/last')
-    .pipe(take(1));
-  }
 }

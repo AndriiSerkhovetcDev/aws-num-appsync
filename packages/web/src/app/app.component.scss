@@ -6,6 +6,17 @@
     flex-direction: column;
     align-items: center;
 
+    &--field {
+      outline: none;
+      width: 200px;
+      height: 40px;
+      margin: 0 10px 10px 0;
+      text-align: center;
+      font-size: 22px;
+      border-radius: 7px;
+      border: 1px solid gray;
+    }
+
     &-container {
       display: flex;
       align-items: baseline;
@@ -14,17 +25,6 @@
 
   &__history {
     margin-top: 20px;
-  }
-
-  &__history-records-wrapper {
-    margin: 0 auto;
-    height: 400px;
-    width: 250px;
-    overflow: auto;
-    box-shadow: 0 0 5px gray inset;
-
-    border: solid 2px gray;
-    border-radius: 12px;
   }
 
   &__history-records {
@@ -46,25 +46,12 @@
     }
   }
 
-  input {
-    outline: none;
-    width: 100px;
-    height: 40px;
-    margin: 0 10px 10px 0;
-    text-align: center;
-    font-size: 22px;
-
-    border-radius: 12px;
-    border: 1px solid gray;
-  }
-
   button {
     height: 35px;
     width: 80px;
     cursor: pointer;
 
     background: none;
-    //box-shadow: 0 0 5px gray;
     border: 1px solid gray;
     border-radius: 12px;
     font-size: 16px;
@@ -72,9 +59,10 @@
     transition: all .1s ease-in;
 
     &:hover {
-      background: gray;
+      background: lightblue;
       color: white;
       box-shadow: none;
+      border: none;
     }
 
     &:active {
